@@ -1,0 +1,23 @@
+[project]
+name = "dhg-project"
+version = "0.1.0"
+description = "DHG project with CUDA 11.8 wheels"
+requires-python = ">=3.10,<3.11"
+dependencies = [
+    "torch==1.13.1+cu117",
+    "torchvision==0.14.1+cu117",
+    "torchaudio==0.13.1+cu117",
+    "dhg",
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu117"
+url = "https://download.pytorch.org/whl/cu117"
+explicit = true
+
+[tool.uv.sources]
+# 使用精确匹配，强制指向 CUDA 11.7 编译的 x86_64 版本
+# 11.7 是 torch 1.13.1 在 Linux x86 上支持最全的版本
+torch = { index = "pytorch-cu117" }
+torchvision = { index = "pytorch-cu117" }
+torchaudio = { index = "pytorch-cu117" }

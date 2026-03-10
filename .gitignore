@@ -1,0 +1,14 @@
+# 虚拟环境
+.venv/
+.python-version
+
+# 缓存
+__pycache__/
+*.pyc
+
+# 忽略IDE配置
+.vscode/
+.idea/
+
+# 其他
+.DS_Store
